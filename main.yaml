@@ -1,5 +1,10 @@
 - name: configure frontend server
   hosts: frontend
   become: yes
+  tasks:
   - name: ping the server
     ping: 
+  - name: install nginx
+    package:
+      name: nginx
+      state: present
